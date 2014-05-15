@@ -1,0 +1,17 @@
+<project name="antsimple" default="dist">
+
+	<target name="dist" description="generate the distribution">
+		<jar jarfile="lieberman.forecast.jar">
+		    
+			<zipgroupfileset dir="libs" includes="**/*.jar" />
+			<manifest>
+				<attribute name="Main-Class" value="lieberman.forecast.ForecastFrame" />
+			</manifest>
+
+			<fileset dir="./bin">
+				<include name="lieberman/forecast/*.class" />
+				<include name="lieberman/forecast/*.txt" />
+			</fileset>
+		</jar>
+		</target>
+</project>
